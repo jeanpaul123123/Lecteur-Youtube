@@ -14,6 +14,10 @@ class TableauController: UIViewController,UITableViewDelegate,UITableViewDataSou
     @IBOutlet weak var TableView: UITableView!
     var chansons = [Chanson]()
     
+    // on doit aussi ajouter ce identifiant cell dans le champs identifier de "ChansonCell" sur mainstory board
+    
+    let identifiantCell = "ChansonCell"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,7 +33,28 @@ class TableauController: UIViewController,UITableViewDelegate,UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell() // temporaire : on retourne une vide pour l'instant
+        // cette fonction crée une boucle sur toutes les cellules de la table (de 0 à count - 1)
+        let chanson = chansons[indexPath.row]
+        print(indexPath.row)
+        if let cell = tableView.dequeueReusableCell(withIdentifier: identifiantCell) as? ChansonCell {
+            cell.creerCell(chanson)
+            return cell
+        }
+        
+        // ce return la si cela ne fonctionne pas
+        return UITableViewCell()
+        
+        
+        // ancienne version avant la création de chansonCell Swift :
+//        let cell = UITableViewCell()
+//        cell.textLabel?.text = chanson.titre
+//        return cell
+        //return UITableViewCell() // temporaire : on retourne une vide pour l'instant (écran avec que des lignes sur l'iphone) --> c'était avant d'implémenter cell
+    }
+    
+    // permet de définir une hauteur fixe de 150 à chacune des cellules de la tableview
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 170
     }
     
     func ajouterChanson() {

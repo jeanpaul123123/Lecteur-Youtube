@@ -21,6 +21,43 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="894-4n-cXT">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChansonCell" rowHeight="167" id="Ypc-KR-65z" customClass="ChansonCell" customModule="Lecteur_Youtube" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="167"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ypc-KR-65z" id="Vu7-wp-kUc">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="166.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="8QL-Lk-Lkx">
+                                                    <rect key="frame" x="8" y="8.5" width="150" height="150"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="150" id="DiG-gS-7mb"/>
+                                                        <constraint firstAttribute="height" constant="150" id="uBD-hy-JYk"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ve-Ka-AAZ">
+                                                    <rect key="frame" x="166" y="5" width="248" height="156.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="6ve-Ka-AAZ" secondAttribute="bottom" constant="5" id="9PL-sk-TqT"/>
+                                                <constraint firstItem="8QL-Lk-Lkx" firstAttribute="centerY" secondItem="Vu7-wp-kUc" secondAttribute="centerY" id="CMv-hU-IvR"/>
+                                                <constraint firstAttribute="trailing" secondItem="6ve-Ka-AAZ" secondAttribute="trailing" id="DrU-JQ-I1E"/>
+                                                <constraint firstItem="6ve-Ka-AAZ" firstAttribute="top" secondItem="Vu7-wp-kUc" secondAttribute="top" constant="5" id="Pam-UA-stO"/>
+                                                <constraint firstItem="8QL-Lk-Lkx" firstAttribute="leading" secondItem="Vu7-wp-kUc" secondAttribute="leading" constant="8" id="Rpi-Vw-k9L"/>
+                                                <constraint firstItem="6ve-Ka-AAZ" firstAttribute="leading" secondItem="8QL-Lk-Lkx" secondAttribute="trailing" constant="8" id="pjy-9g-z2P"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="artisteEtTitreLabel" destination="6ve-Ka-AAZ" id="yp3-WL-ZwD"/>
+                                            <outlet property="miniature" destination="8QL-Lk-Lkx" id="Pif-r1-1Ar"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -60,4 +97,7 @@
             <point key="canvasLocation" x="200.00000000000003" y="763.39285714285711"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="960" height="553"/>
+    </resources>
 </document>
