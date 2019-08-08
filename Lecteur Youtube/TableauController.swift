@@ -24,6 +24,8 @@ class TableauController: UIViewController,UITableViewDelegate,UITableViewDataSou
         TableView.delegate = self // cad UITableViewDelegate
         TableView.dataSource = self // idem
         ajouterChanson()
+        //navigationController?.title = "Mes vidéos préférées"
+        title = "Mes vidéos préférées"
         
     }
     
@@ -54,7 +56,7 @@ class TableauController: UIViewController,UITableViewDelegate,UITableViewDataSou
     
     // permet de définir une hauteur fixe de 150 à chacune des cellules de la tableview
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 170
+        return 130
     }
     
     func ajouterChanson() {

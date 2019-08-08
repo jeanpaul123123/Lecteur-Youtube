@@ -26,7 +26,7 @@ class Chanson {
     }
     
     
-    private var _baseUrlMiniature = "http://i.ytime.com/vi"
+    private var _baseUrlMiniature = "http://i.ytimg.com/vi/"
     private var _finUrlMiniature = "/maxresdefault.jpg"
     
     var miniatureURL: String {
