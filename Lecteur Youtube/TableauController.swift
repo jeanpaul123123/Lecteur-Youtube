@@ -17,6 +17,7 @@ class TableauController: UIViewController,UITableViewDelegate,UITableViewDataSou
     // on doit aussi ajouter ce identifiant cell dans le champs identifier de "ChansonCell" sur mainstory board
     
     let identifiantCell = "ChansonCell"
+    let identifiantSegue = "VersVideo"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,7 @@ class TableauController: UIViewController,UITableViewDelegate,UITableViewDataSou
         TableView.dataSource = self // idem
         ajouterChanson()
         //navigationController?.title = "Mes vidéos préférées"
-        title = "Mes vidéos préférées"
+        title = "Vidéos bien nulles"
         
     }
     
@@ -57,6 +58,22 @@ class TableauController: UIViewController,UITableViewDelegate,UITableViewDataSou
     // permet de définir une hauteur fixe de 150 à chacune des cellules de la tableview
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 130
+    }
+    
+    // fonction qui se lance quand on sélectionne la ligne : d'ou didSelectRowAt
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // ligne sur laquelle on
+        let chanson = chansons[indexPath.row]
+        // le perform est appelé en premier
+        performSegue(withIdentifier: identifiantSegue, sender: chanson)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == identifiantSegue {
+            if let nouveauController = segue.destination as? VideoController {
+                nouveauController.chanson = sender as? Chanson
+            }
+        }
     }
     
     func ajouterChanson() {

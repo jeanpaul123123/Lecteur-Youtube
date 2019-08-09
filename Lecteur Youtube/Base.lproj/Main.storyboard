@@ -37,7 +37,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ve-Ka-AAZ">
-                                                    <rect key="frame" x="166" y="5" width="248" height="156.5"/>
+                                                    <rect key="frame" x="166" y="5" width="642" height="156.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -72,6 +72,7 @@
                     <navigationItem key="navigationItem" id="AmC-Hj-M4h"/>
                     <connections>
                         <outlet property="TableView" destination="894-4n-cXT" id="fvC-pc-vg9"/>
+                        <segue destination="9R8-4W-SI4" kind="show" identifier="VersVideo" id="88u-M6-ILl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -95,6 +96,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qdt-jL-Gvz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="200.00000000000003" y="763.39285714285711"/>
+        </scene>
+        <!--Video Controller-->
+        <scene sceneID="my0-Fa-GmT">
+            <objects>
+                <viewController id="9R8-4W-SI4" customClass="VideoController" customModule="Lecteur_Youtube" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NNx-7z-lKb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7VB-vR-NkB">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7VB-vR-NkB" firstAttribute="leading" secondItem="UzQ-ao-2ha" secondAttribute="leading" id="6wT-Op-r13"/>
+                            <constraint firstAttribute="bottom" secondItem="7VB-vR-NkB" secondAttribute="bottom" id="A9e-2v-3oz"/>
+                            <constraint firstItem="UzQ-ao-2ha" firstAttribute="trailing" secondItem="7VB-vR-NkB" secondAttribute="trailing" id="ELF-uQ-1vb"/>
+                            <constraint firstItem="7VB-vR-NkB" firstAttribute="top" secondItem="UzQ-ao-2ha" secondAttribute="top" id="TFH-wI-vO6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UzQ-ao-2ha"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="7VB-vR-NkB" id="WQa-fB-WTi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Lc-bn-gvG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1750.7246376811595" y="118.52678571428571"/>
         </scene>
     </scenes>
     <resources>
